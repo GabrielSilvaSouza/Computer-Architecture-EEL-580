@@ -4,7 +4,7 @@
 int main (void) {
 
 
-	int n = 4;
+	int n = 16;
 /*
 	double matrix[n][n], matrix_clear[n][n];
 
@@ -37,9 +37,9 @@ int main (void) {
 		matrix_A[i] = (i+5.0);
 		printf("%2.0f", matrix_A[i]);
 	}
-	
+
 	for(int i = 0; i < n; i++) {
-		matrix_B[i] = (double)(i+2.0);
+		matrix_B[i] = (i+2.0);
 	}
 	
 	for(int i = 0; i < n; i++) {
@@ -48,19 +48,20 @@ int main (void) {
 	
 	
 	
-	double (*A)[n] = &matrix_A;
-	double (*B)[n] = &matrix_B;
-	double (*C)[n] = &matrix_C;
+	double *A = matrix_A;
+	double *B = matrix_B;
+	double *C = matrix_C;
+	
 	
 	printf("\n");
 	for(int i = 0; i < n; i++) {
-		printf("%f\n",*(A));
+		printf("%2.0f\n",A[i]);
 	}
 	
 
 
 /*
-	###for(int i = 0; i < n; i++) {
+	for(int i = 0; i < n; i++) {
 		printf("%2.0f",*A[i]);
 	}
 	
@@ -78,6 +79,8 @@ int main (void) {
 	}*/
 	return 0;
 }
+
+
 
 
 
