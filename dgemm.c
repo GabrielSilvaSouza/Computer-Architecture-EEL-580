@@ -4,79 +4,44 @@
 int main (void) {
 
 
-	int n = 16;
-/*
-	double matrix[n][n], matrix_clear[n][n];
-
-	for(int u = 0; u < 4; u++){
-		for(int v = 0; v < 4; v++) {
-		matrix[u][v] = v;
-		}
-	}
-	
-	for(int u = 0; u < 4; u++){
-		for(int v = 0; v < 4; v++) {
-		matrix_clear[u][v] = 0;
-		}
-	}
-    
-	for(int p = 0; p<n; p++){
-		for(int q = 0; q < 4; q++) {
-			printf("%2.0f", matrix[p][q]);
-		} 
-		printf("\n");  
-	} */
+	int n = 3;
 
     	//creating variables
-	double matrix_A[n];
-	double matrix_B[n];
-	double matrix_C[n];
+	double c [] = {
+        0, 0, 0,
+        0, 0, 0,
+        0, 0, 0,
+    	};
 	
-	//initializating matrix
-	for(int i = 0; i < n; i++) {
-		matrix_A[i] = (i+5.0);
-		printf("%2.0f", matrix_A[i]);
-	}
+	double a[] = {
+        1, 2, 3,
+        4, 5, 6,
+        4, 5, 6,
+    	};
+    	double b[] = {
+        1, 2, 3,
+        4, 5, 6,
+        4, 5, 6,
+    	};
 
-	for(int i = 0; i < n; i++) {
-		matrix_B[i] = (i+2.0);
-	}
 	
-	for(int i = 0; i < n; i++) {
-		matrix_C[i] = 0.0;
-	}
+	double *A = a;
+	double *B = b;
+	double *C = c;
 	
-	
-	
-	double *A = matrix_A;
-	double *B = matrix_B;
-	double *C = matrix_C;
-	
-	
-	printf("\n");
-	for(int i = 0; i < n; i++) {
-		printf("%2.0f\n",A[i]);
-	}
-	
-
-
-/*
-	for(int i = 0; i < n; i++) {
-		printf("%2.0f",*A[i]);
-	}
-	
-	
-	
-	for(int i =0; i < n; i++) {
-		for(int j=0; j<n; i++) {
-			double (*cij) = C[i+j*n];
+	for(int i =0; i < n; ++i) {
+		for(int j=0; j<n; ++j) {
+			double cij = C[i+j*n];
 			for (int k = 0; k < n; k++) {
 				cij += (A[i+k*n]) * (B[k+j*n]);
-            
 			C[i+j*n] = cij;
 			}
 		}
-	}*/
+	}
+	
+	for(int i = 0; i < 9; i++) {
+		printf("%2.0f",C[i]);
+	}
 	return 0;
 }
 
