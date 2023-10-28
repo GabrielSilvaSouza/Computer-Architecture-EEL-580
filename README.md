@@ -1,2 +1,3 @@
 # ArqComp
-A place to develop a DGEMM project and a vectorial adder (update this)
+This repo is aimed to the development of a DGEMM(Double Precision General Matrix Multiply) for
+the purpose of optmize matrix operations time.
